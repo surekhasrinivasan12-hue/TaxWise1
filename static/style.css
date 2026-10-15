@@ -1,0 +1,1050 @@
+/* =====================================================
+   TAXWISE - INCOME TAX GUIDE & CALCULATOR
+   COMPLETE WEBSITE STYLING
+===================================================== */
+
+
+/* =====================================================
+   BASIC RESET
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f8fafc;
+    color: #1e293b;
+    line-height: 1.6;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+header {
+    width: 100%;
+    background: white;
+    padding: 18px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e2e8f0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    color: #0f172a;
+}
+
+
+nav {
+    display: flex;
+    gap: 28px;
+}
+
+
+nav a {
+    text-decoration: none;
+    color: #475569;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+
+nav a:hover {
+    color: #2563eb;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero {
+    min-height: 550px;
+    padding: 80px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+    background: linear-gradient(
+        135deg,
+        #eff6ff,
+        #ffffff
+    );
+}
+
+
+.hero-text {
+    max-width: 650px;
+}
+
+
+.badge {
+    display: inline-block;
+    background: #dbeafe;
+    color: #1d4ed8;
+    padding: 8px 15px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+
+.hero h1 {
+    font-size: 52px;
+    line-height: 1.15;
+    color: #0f172a;
+    margin-bottom: 20px;
+}
+
+
+.hero p {
+    font-size: 18px;
+    color: #64748b;
+    max-width: 600px;
+    margin-bottom: 30px;
+}
+
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+
+.primary-btn,
+.secondary-btn {
+    display: inline-block;
+    padding: 14px 22px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+
+.primary-btn {
+    background: #2563eb;
+    color: white;
+}
+
+
+.primary-btn:hover {
+    background: #1d4ed8;
+    transform: translateY(-2px);
+}
+
+
+.secondary-btn {
+    background: white;
+    color: #2563eb;
+    border: 1px solid #2563eb;
+}
+
+
+.secondary-btn:hover {
+    background: #eff6ff;
+}
+
+
+.hero-card {
+    width: 330px;
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 15px 40px rgba(15, 23, 42, 0.12);
+}
+
+
+.money-icon {
+    width: 75px;
+    height: 75px;
+    margin: auto auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #dbeafe;
+    border-radius: 50%;
+    font-size: 38px;
+    color: #2563eb;
+}
+
+
+.hero-card h3 {
+    font-size: 23px;
+    margin-bottom: 10px;
+}
+
+
+.hero-card p {
+    font-size: 15px;
+    margin: 0;
+}
+
+
+/* =====================================================
+   GENERAL SECTION
+===================================================== */
+
+.section {
+    padding: 80px 7%;
+    background: white;
+}
+
+
+.light-section {
+    background: #f8fafc;
+}
+
+
+.section-title {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 45px;
+}
+
+
+.section-title span,
+.calculator-heading span,
+.result-header span {
+    color: #2563eb;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+}
+
+
+.section-title h2,
+.calculator-heading h2 {
+    font-size: 38px;
+    color: #0f172a;
+    margin: 10px 0;
+}
+
+
+.section-title p {
+    color: #64748b;
+}
+
+
+/* =====================================================
+   LEARNING CARDS
+===================================================== */
+
+.learning-grid {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+
+
+.learn-card {
+    background: white;
+    padding: 28px;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    transition: 0.3s;
+}
+
+
+.learn-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgba(15, 23, 42, 0.1);
+}
+
+
+.card-icon {
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+
+
+.learn-card h3 {
+    margin-bottom: 10px;
+    color: #0f172a;
+}
+
+
+.learn-card p {
+    color: #64748b;
+    font-size: 15px;
+}
+
+
+/* =====================================================
+   TABLE
+===================================================== */
+
+.table-container {
+    max-width: 900px;
+    margin: auto;
+    overflow-x: auto;
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(15, 23, 42, 0.08);
+}
+
+
+th {
+    background: #2563eb;
+    color: white;
+    padding: 17px;
+    text-align: left;
+}
+
+
+td {
+    padding: 16px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+
+tbody tr:hover {
+    background: #eff6ff;
+}
+
+
+.info-box {
+    max-width: 900px;
+    margin: 25px auto 0;
+    padding: 18px 22px;
+    background: #eff6ff;
+    border-left: 5px solid #2563eb;
+    border-radius: 8px;
+    color: #334155;
+}
+
+
+/* =====================================================
+   CALCULATOR
+===================================================== */
+
+.calculator-section {
+    padding: 80px 7%;
+    background: #0f172a;
+}
+
+
+.calculator-container {
+    max-width: 1000px;
+    margin: auto;
+}
+
+
+.calculator-heading {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+
+.calculator-heading h2 {
+    color: white;
+}
+
+
+.calculator-heading p {
+    color: #94a3b8;
+}
+
+
+form {
+    background: white;
+    padding: 40px;
+    border-radius: 18px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+}
+
+
+.input-group {
+    margin-bottom: 24px;
+}
+
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #334155;
+}
+
+
+.input-group input,
+.input-group select {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
+    font-size: 16px;
+    background: white;
+}
+
+
+.input-group input:focus,
+.input-group select:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+
+.input-wrapper {
+    display: flex;
+    align-items: center;
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+
+.input-wrapper span {
+    padding: 0 15px;
+    font-size: 18px;
+    color: #475569;
+}
+
+
+.input-wrapper input {
+    border: none;
+    border-radius: 0;
+}
+
+
+.calculate-btn {
+    width: 100%;
+    padding: 16px;
+    border: none;
+    border-radius: 10px;
+    background: #2563eb;
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+
+.calculate-btn:hover {
+    background: #1d4ed8;
+    transform: translateY(-2px);
+}
+
+
+/* =====================================================
+   RESULT
+===================================================== */
+
+.result-section {
+    margin-top: 35px;
+}
+
+
+.result-header {
+    background: white;
+    padding: 30px;
+    border-radius: 18px 18px 0 0;
+}
+
+
+.result-header h2 {
+    font-size: 30px;
+    margin-top: 8px;
+    color: #0f172a;
+}
+
+
+.result-header p {
+    margin-top: 8px;
+    font-weight: bold;
+    color: #2563eb;
+}
+
+
+.final-result {
+    background: #2563eb;
+    color: white;
+    padding: 35px;
+    text-align: center;
+}
+
+
+.final-result p {
+    font-size: 16px;
+}
+
+
+.final-result h1 {
+    font-size: 45px;
+    margin-top: 5px;
+}
+
+
+.result-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    background: white;
+    padding: 25px;
+    gap: 15px;
+}
+
+
+.result-card {
+    background: #f8fafc;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+
+.result-card span {
+    display: block;
+    color: #64748b;
+    font-size: 14px;
+    margin-bottom: 7px;
+}
+
+
+.result-card strong {
+    color: #0f172a;
+    font-size: 18px;
+}
+
+
+/* =====================================================
+   EXPLANATION
+===================================================== */
+
+.explanation {
+    background: white;
+    padding: 35px;
+}
+
+
+.explanation h3 {
+    color: #0f172a;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+
+.explanation-intro {
+    color: #64748b;
+    margin-bottom: 20px;
+}
+
+
+.slab-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 0;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+
+.slab-row div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+
+.slab-row span {
+    color: #64748b;
+    font-size: 14px;
+}
+
+
+.slab-row > strong {
+    color: #2563eb;
+}
+
+
+.calculation-summary {
+    margin-top: 25px;
+    padding-top: 10px;
+}
+
+
+.calculation-summary p {
+    display: flex;
+    justify-content: space-between;
+    padding: 9px 0;
+}
+
+
+.final-line {
+    font-size: 20px;
+    font-weight: bold;
+    border-top: 2px solid #e2e8f0;
+    margin-top: 10px;
+    padding-top: 18px !important;
+}
+
+
+.learning-tip {
+    background: #eff6ff;
+    padding: 25px 30px;
+    border-radius: 12px;
+    margin-top: 20px;
+}
+
+
+.learning-tip h3 {
+    color: #1d4ed8;
+    margin-bottom: 8px;
+}
+
+
+/* =====================================================
+   ERROR
+===================================================== */
+
+.error-box {
+    margin-top: 25px;
+    background: #fee2e2;
+    color: #b91c1c;
+    padding: 18px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+
+/* =====================================================
+   FAQ
+===================================================== */
+
+.faq-container {
+    max-width: 900px;
+    margin: auto;
+}
+
+
+details {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    padding: 18px 20px;
+}
+
+
+summary {
+    cursor: pointer;
+    font-weight: bold;
+    color: #0f172a;
+}
+
+
+details p {
+    margin-top: 12px;
+    color: #64748b;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+    background: #020617;
+    color: white;
+    text-align: center;
+    padding: 45px 7%;
+}
+
+
+footer h3 {
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+
+footer p {
+    color: #94a3b8;
+}
+
+
+.disclaimer {
+    max-width: 750px;
+    margin: 20px auto 0;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+
+/* =====================================================
+   LEARN PAGE
+===================================================== */
+
+.learn-page {
+    max-width: 1100px;
+    margin: auto;
+    padding: 60px 7%;
+}
+
+
+.learn-page h1 {
+    font-size: 45px;
+    color: #0f172a;
+    margin-bottom: 15px;
+}
+
+
+.learn-page h2 {
+    font-size: 30px;
+    color: #0f172a;
+    margin-top: 40px;
+    margin-bottom: 15px;
+}
+
+
+.learn-page h3 {
+    color: #1e293b;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+
+.learn-page p {
+    color: #475569;
+    margin-bottom: 15px;
+}
+
+
+.learn-page ul {
+    margin: 15px 0 20px 25px;
+}
+
+
+.learn-page li {
+    margin-bottom: 8px;
+    color: #475569;
+}
+
+
+.learn-card-large {
+    background: white;
+    padding: 30px;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    margin-top: 25px;
+    box-shadow: 0 8px 25px rgba(15, 23, 42, 0.06);
+}
+
+
+/* =====================================================
+   MOBILE RESPONSIVE
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+
+    .hero-card {
+        width: 100%;
+        max-width: 400px;
+    }
+
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+
+    .learning-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    .result-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+
+    nav {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+
+    .hero {
+        padding: 55px 6%;
+    }
+
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+
+    .section {
+        padding: 60px 6%;
+    }
+
+
+    .section-title h2,
+    .calculator-heading h2 {
+        font-size: 30px;
+    }
+
+
+    .learning-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .result-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    form {
+        padding: 25px;
+    }
+
+
+    .final-result h1 {
+        font-size: 36px;
+    }
+
+
+    .slab-row {
+        gap: 15px;
+    }
+
+
+    .slab-row > strong {
+        white-space: nowrap;
+    }
+
+
+    .learn-page {
+        padding: 40px 6%;
+    }
+
+
+    .learn-page h1 {
+        font-size: 35px;
+    }
+
+}
+/* =====================================================
+   TAXWISE V4
+===================================================== */
+
+.calculator-card {
+    max-width: 850px;
+    margin: 30px auto;
+    padding: 35px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+}
+
+.form-group {
+    margin-bottom: 22px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 13px 15px;
+    border: 1px solid #d9e0ea;
+    border-radius: 10px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #2563eb;
+}
+
+.form-group small {
+    display: block;
+    margin-top: 6px;
+    color: #64748b;
+}
+
+.calculate-btn {
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    font-size: 17px;
+}
+
+.result-card {
+    max-width: 1000px;
+    margin: 40px auto;
+    background: white;
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.10);
+}
+
+.result-header {
+    padding: 35px;
+    text-align: center;
+    background: #f1f5ff;
+}
+
+.result-header p {
+    margin: 0 0 8px;
+    font-weight: 600;
+}
+
+.result-header h2 {
+    margin: 0 0 8px;
+    font-size: 34px;
+}
+
+.result-header span {
+    color: #64748b;
+}
+
+.result-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    padding: 30px;
+}
+
+.result-item {
+    padding: 20px;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+}
+
+.result-item span {
+    display: block;
+    color: #64748b;
+    margin-bottom: 7px;
+}
+
+.result-item strong {
+    font-size: 20px;
+}
+
+.result-item.highlight {
+    background: #eff6ff;
+    border-color: #bfdbfe;
+}
+
+.calculation-section {
+    padding: 30px;
+    border-top: 1px solid #e5e7eb;
+}
+
+.calculation-section h3 {
+    margin-top: 0;
+}
+
+.calculation-row,
+.slab-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #edf0f4;
+}
+
+.calculation-row strong {
+    font-size: 17px;
+}
+
+.final-row {
+    font-size: 19px;
+    border-bottom: none;
+    padding-top: 25px;
+}
+
+.slab-row small {
+    display: block;
+    margin-top: 4px;
+    color: #64748b;
+}
+
+.error-box {
+    max-width: 850px;
+    margin: 25px auto;
+    padding: 18px;
+    background: #fef2f2;
+    color: #991b1b;
+    border: 1px solid #fecaca;
+    border-radius: 12px;
+}
+
+@media (max-width: 700px) {
+
+    .calculator-card {
+        padding: 22px;
+    }
+
+    .result-grid {
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+
+    .result-header h2 {
+        font-size: 27px;
+    }
+
+    .calculation-section {
+        padding: 20px;
+    }
+
+    .calculation-row,
+    .slab-row {
+        gap: 15px;
+    }
+}
