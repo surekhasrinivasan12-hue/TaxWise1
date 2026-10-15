@@ -1,0 +1,1527 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+/* =================================================
+   TAXWISE - FINAL TAX HIGHLIGHT
+================================================= */
+
+.final-row {
+    margin-top: 18px;
+    padding: 20px;
+    border-radius: 16px;
+    background: linear-gradient(
+        135deg,
+        #f8fafc,
+        #eef2ff
+    );
+    border: 1px solid #dbe3f0;
+}
+
+.final-row strong:first-child {
+    font-size: 18px;
+}
+
+.final-row small {
+    display: block;
+    margin-top: 6px;
+    font-size: 13px;
+    opacity: 0.75;
+}
+
+.final-tax-amount {
+    font-size: 28px;
+    font-weight: 800;
+    white-space: nowrap;
+}
+</style>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>TaxWise - Income Tax Calculator</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+====================================================== -->
+
+<header class="site-header">
+
+    <div class="container nav-container">
+
+        <div class="logo">
+            💰 TaxWise
+        </div>
+
+        <nav>
+
+            <a href="/">Home</a>
+
+            <a href="/learn">Learn Tax</a>
+
+            <a href="#calculator">Calculator</a>
+
+            <a href="#faq">FAQ</a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     HERO
+====================================================== -->
+
+<section class="hero">
+
+    <div class="container">
+
+        <div class="hero-content">
+
+            <div class="hero-text">
+
+                <p class="hero-tag">
+                    TAX YEAR / AY 2026–27
+                </p>
+
+                <h1>
+                    Understand Your Tax.
+                    <br>
+                    Calculate With
+                    <br>
+                    Confidence.
+                </h1>
+
+                <p>
+                    Learn the basics of income tax and calculate
+                    your estimated tax with a simple step-by-step
+                    explanation.
+                </p>
+
+
+                <div class="hero-buttons">
+
+                    <a href="#calculator"
+                       class="btn">
+
+                        🧮 Calculate My Tax
+
+                    </a>
+
+
+                    <a href="/learn"
+                       class="btn btn-outline">
+
+                        📚 Learn About Tax
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="hero-card">
+
+                <div class="hero-icon">
+                    ₹
+                </div>
+
+                <h2>
+                    Tax isn't just a number.
+                </h2>
+
+                <p>
+                    Learn where your tax comes from
+                    and how each slab affects your
+                    calculation.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     LEARNING INTRO
+====================================================== -->
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <p class="section-label">
+                LEARN
+            </p>
+
+            <h2>
+                Understand Income Tax
+            </h2>
+
+            <p>
+                Before calculating your tax, understand
+                the important concepts behind it.
+            </p>
+
+        </div>
+
+
+        <div class="learning-grid">
+
+
+            <div class="learning-card">
+
+                <div class="card-icon">
+                    💰
+                </div>
+
+                <h3>
+                    Income
+                </h3>
+
+                <p>
+                    Understand salary, other income
+                    and how they contribute to your
+                    total income.
+                </p>
+
+            </div>
+
+
+            <div class="learning-card">
+
+                <div class="card-icon">
+                    📊
+                </div>
+
+                <h3>
+                    Tax Slabs
+                </h3>
+
+                <p>
+                    Learn why different portions of
+                    income can be taxed at different
+                    rates.
+                </p>
+
+            </div>
+
+
+            <div class="learning-card">
+
+                <div class="card-icon">
+                    🧾
+                </div>
+
+                <h3>
+                    Deductions
+                </h3>
+
+                <p>
+                    Understand how eligible deductions
+                    can reduce taxable income.
+                </p>
+
+            </div>
+
+
+            <div class="learning-card">
+
+                <div class="card-icon">
+                    💡
+                </div>
+
+                <h3>
+                    Rebate & Cess
+                </h3>
+
+                <p>
+                    Understand how rebate and Health &
+                    Education Cess affect the final amount.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CALCULATOR
+====================================================== -->
+
+<section id="calculator"
+         class="section calculator-section">
+
+    <div class="container">
+
+
+        <div class="section-heading">
+
+            <p class="section-label">
+                CALCULATOR
+            </p>
+
+            <h2>
+                Calculate Your Estimated Tax
+            </h2>
+
+            <p>
+                Enter your details below to see how
+                TaxWise calculates your estimated tax.
+            </p>
+
+        </div>
+
+
+
+        <!-- =================================================
+             CALCULATOR CARD
+        ================================================== -->
+
+        <div class="calculator-card">
+
+
+            <form method="POST">
+
+
+                <!-- NAME -->
+
+                <div class="form-group">
+
+                    <label for="name">
+                        Your Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Enter your name"
+                        value="{{ name }}"
+                    >
+
+                </div>
+
+
+
+                <!-- AGE -->
+
+                <div class="form-group">
+
+                    <label for="age">
+                        Age
+                    </label>
+
+                    <input
+                        type="number"
+                        id="age"
+                        name="age"
+                        min="1"
+                        max="120"
+                        placeholder="Example: 25"
+                        required
+                    >
+
+                    <small>
+                        Age is used for the applicable
+                        old-regime slab.
+                    </small>
+
+                </div>
+
+
+
+                <!-- SALARY -->
+
+                <div class="form-group">
+
+                    <label for="salary">
+                        Annual Salary
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <span>₹</span>
+
+                        <input
+                            type="number"
+                            id="salary"
+                            name="salary"
+                            min="0"
+                            step="0.01"
+                            placeholder="Example: 1200000"
+                            required
+                        >
+
+                    </div>
+
+                    <small>
+                        Enter your annual salary before
+                        the standard deduction.
+                    </small>
+
+                </div>
+
+
+
+                <!-- OTHER INCOME -->
+
+                <div class="form-group">
+
+                    <label for="other_income">
+                        Other Income
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <span>₹</span>
+
+                        <input
+                            type="number"
+                            id="other_income"
+                            name="other_income"
+                            min="0"
+                            step="0.01"
+                            placeholder="Example: 50000"
+                        >
+
+                    </div>
+
+                    <small>
+                        Enter other ordinary income supported
+                        by this estimator.
+                    </small>
+
+                </div>
+
+
+
+                <!-- TAX REGIME -->
+
+                <div class="form-group">
+
+                    <label for="regime">
+                        Choose Tax Regime
+                    </label>
+
+                    <select
+                        id="regime"
+                        name="regime"
+                        onchange="toggleOldDeductions()"
+                    >
+
+                        <option value="new">
+                            New Tax Regime
+                        </option>
+
+                        <option value="old">
+                            Old Tax Regime
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     NEW REGIME INFORMATION
+                ================================================== -->
+
+                <div id="newRegimeInfo"
+                     class="regime-info">
+
+                    <div class="info-box">
+
+                        <strong>
+                            ℹ️ New Tax Regime
+                        </strong>
+
+                        <p>
+                            The new regime generally has lower
+                            slab rates but fewer deductions.
+                            TaxWise automatically applies the
+                            standard deduction supported by this
+                            version.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     OLD REGIME DEDUCTIONS
+                ================================================== -->
+
+                <div id="oldDeductions"
+                     style="display: none;">
+
+
+                    <div class="info-box">
+
+                        <strong>
+                            📋 Old Regime Deductions
+                        </strong>
+
+                        <p>
+                            Enter eligible deductions that you
+                            want TaxWise to consider.
+                        </p>
+
+                    </div>
+
+
+
+                    <!-- 80C -->
+
+                    <div class="form-group">
+
+                        <label for="deduction_80c">
+
+                            Section 80C
+
+                        </label>
+
+                        <div class="input-wrapper">
+
+                            <span>₹</span>
+
+                            <input
+                                type="number"
+                                id="deduction_80c"
+                                name="deduction_80c"
+                                min="0"
+                                step="0.01"
+                                placeholder="Maximum considered: ₹1,50,000"
+                            >
+
+                        </div>
+
+                        <small>
+
+                            Enter your eligible 80C amount.
+                            TaxWise limits the amount considered
+                            to ₹1,50,000 in this version.
+
+                        </small>
+
+                    </div>
+
+
+
+                    <!-- 80D -->
+
+                    <div class="form-group">
+
+                        <label for="deduction_80d">
+
+                            Section 80D
+
+                        </label>
+
+                        <div class="input-wrapper">
+
+                            <span>₹</span>
+
+                            <input
+                                type="number"
+                                id="deduction_80d"
+                                name="deduction_80d"
+                                min="0"
+                                step="0.01"
+                                placeholder="Enter eligible amount"
+                            >
+
+                        </div>
+
+                        <small>
+
+                            Enter the eligible health-insurance
+                            deduction applicable to your situation.
+
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     CALCULATE BUTTON
+                ================================================== -->
+
+                <button
+                    type="submit"
+                    class="btn calculate-btn">
+
+                    🧮 Calculate My Tax
+
+                </button>
+
+
+            </form>
+
+        </div>
+
+
+
+        <!-- =================================================
+             ERROR MESSAGE
+        ================================================== -->
+
+        {% if result and result.error %}
+
+        <div class="error-box">
+
+            <strong>
+                ⚠️ Please check your details
+            </strong>
+
+            <p>
+                {{ result.error }}
+            </p>
+
+        </div>
+
+        {% endif %}
+
+
+
+        <!-- =================================================
+             RESULT
+        ================================================== -->
+
+        {% if result and not result.error %}
+
+        <div class="result-card">
+
+
+            <!-- RESULT HEADER -->
+
+            <div class="result-header">
+
+                <p class="result-regime">
+
+                    {{ result.regime }}
+
+                </p>
+
+
+                <h2>
+
+                    ₹{{ "{:,.0f}".format(result.final_tax) }}
+
+                </h2>
+
+
+                <p>
+
+                    Estimated Final Tax
+
+                </p>
+
+
+                <span>
+
+                    Assessment Year
+                    {{ result.assessment_year }}
+
+                </span>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 INCOME SUMMARY
+            ================================================== -->
+
+            <div class="result-content">
+
+
+                <h3>
+                    Your Income Summary
+                </h3>
+
+
+                <div class="result-grid">
+
+
+                    <!-- SALARY -->
+
+                    <div class="result-item">
+
+                        <span>
+                            Annual Salary
+                        </span>
+
+                        <strong>
+
+                            ₹{{ "{:,.0f}".format(
+                                result.salary
+                            ) }}
+
+                        </strong>
+
+                    </div>
+
+
+
+                    <!-- OTHER INCOME -->
+
+                    <div class="result-item">
+
+                        <span>
+                            Other Income
+                        </span>
+
+                        <strong>
+
+                            ₹{{ "{:,.0f}".format(
+                                result.other_income
+                            ) }}
+
+                        </strong>
+
+                    </div>
+
+
+
+                    <!-- GROSS INCOME -->
+
+                    <div class="result-item">
+
+                        <span>
+                            Gross Income
+                        </span>
+
+                        <strong>
+
+                            ₹{{ "{:,.0f}".format(
+                                result.gross_income
+                            ) }}
+
+                        </strong>
+
+                    </div>
+
+
+
+                    <!-- STANDARD DEDUCTION -->
+
+                    <div class="result-item">
+
+                        <span>
+                            Standard Deduction
+                        </span>
+
+                        <strong>
+
+                            ₹{{ "{:,.0f}".format(
+                                result.standard_deduction
+                            ) }}
+
+                        </strong>
+
+                    </div>
+
+
+
+                    <!-- 80C -->
+
+                    <div class="result-item">
+
+                        <span>
+                            Section 80C
+                        </span>
+
+                        <strong>
+
+                            ₹{{ "{:,.0f}".format(
+                                result.deduction_80c
+                            ) }}
+
+                        </strong>
+
+                    </div>
+
+
+
+                    <!-- 80D -->
+
+                    <div class="result-item">
+
+                        <span>
+                            Section 80D
+                        </span>
+
+                        <strong>
+
+                            ₹{{ "{:,.0f}".format(
+                                result.deduction_80d
+                            ) }}
+
+                        </strong>
+
+                    </div>
+
+
+
+                    <!-- TOTAL DEDUCTIONS -->
+
+                    <div class="result-item">
+
+                        <span>
+                            Total Deductions
+                        </span>
+
+                        <strong>
+
+                            ₹{{ "{:,.0f}".format(
+                                result.total_deductions
+                            ) }}
+
+                        </strong>
+
+                    </div>
+
+
+
+                    <!-- TAXABLE INCOME -->
+
+                    <div class="result-item highlight">
+
+                        <span>
+                            Taxable Income
+                        </span>
+
+                        <strong>
+
+                            ₹{{ "{:,.0f}".format(
+                                result.taxable_income
+                            ) }}
+
+                        </strong>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- =================================================
+                     CALCULATION STEPS
+                ================================================== -->
+
+                <div class="calculation-section">
+
+                    <h3>
+                        📊 Tax Calculation
+                    </h3>
+
+
+                    <div class="calculation-row">
+
+                        <div>
+
+                            <span>
+                                Tax Before Rebate
+                            </span>
+
+                            <small>
+                                Tax calculated using applicable
+                                income-tax slabs.
+                            </small>
+
+                        </div>
+
+                        <strong>
+
+                            ₹{{ "{:,.0f}".format(
+                                result.tax
+                            ) }}
+
+                        </strong>
+
+                    </div>
+
+
+
+                    <div class="calculation-row">
+
+                        <div>
+
+                            <span>
+                                Section 87A Rebate
+                            </span>
+
+                            <small>
+                                Applicable rebate, if eligible.
+                            </small>
+
+                        </div>
+
+                        <strong>
+
+                            − ₹{{ "{:,.0f}".format(
+                                result.rebate
+                            ) }}
+
+                        </strong>
+
+                    </div>
+
+                    <div class="calculation-row">
+
+    <div>
+        <span>Marginal Relief</span>
+
+        <small>
+            Relief applied when taxable income is slightly above ₹12 lakh.
+        </small>
+    </div>
+
+    <strong>
+        ₹{{ "{:,.0f}".format(
+            result.marginal_relief_87a
+        ) }}
+    </strong>
+
+</div>
+
+
+                    <div class="calculation-row">
+
+                        <div>
+
+                            <span>
+                                Tax After Rebate
+                            </span>
+
+                        </div>
+
+                        <strong>
+
+                            ₹{{ "{:,.0f}".format(
+                                result.tax_after_rebate
+                            ) }}
+
+                        </strong>
+
+                    </div>
+
+
+
+                    <div class="calculation-row">
+
+                        <div>
+
+                            <span>
+                                Health & Education Cess
+                            </span>
+
+                            <small>
+                                4% on applicable tax and surcharge,
+                                where applicable.
+                            </small>
+
+                        </div>
+
+                        <strong>
+
+                            ₹{{ "{:,.0f}".format(
+                                result.cess
+                            ) }}
+
+                        </strong>
+
+                    </div>
+
+
+
+                    <div class="calculation-row final-row">
+
+    <div>
+
+        <strong>
+            💰 Final Estimated Tax
+        </strong>
+
+        <small>
+            Estimated tax payable for
+            Assessment Year {{ result.assessment_year }}.
+        </small>
+
+    </div>
+
+    <strong class="final-tax-amount">
+
+        ₹{{ "{:,.0f}".format(
+            result.final_tax
+        ) }}
+
+    </strong>
+
+</div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     SLAB BREAKDOWN
+                ================================================== -->
+
+                <div class="calculation-section">
+
+                    <h3>
+                        🔎 Tax Slab Breakdown
+                    </h3>
+
+
+                    <p class="section-description">
+
+                        Only the applicable portions of your
+                        taxable income are charged at the
+                        corresponding slab rates.
+
+                    </p>
+
+
+                    {% for row in result.breakdown %}
+
+                    <div class="slab-row">
+
+
+                        <div class="slab-info">
+
+                            <strong>
+
+                                {{ row.slab }}
+
+                            </strong>
+
+                            <small>
+
+                                Rate: {{ row.rate }}
+
+                            </small>
+
+                        </div>
+
+
+                        <div class="slab-tax">
+
+                            ₹{{ "{:,.0f}".format(
+                                row.tax
+                            ) }}
+
+                        </div>
+
+
+                    </div>
+
+                    {% endfor %}
+
+                </div>
+
+
+
+                <!-- =================================================
+                     SIMPLE EXPLANATION
+                ================================================== -->
+
+                <div class="info-box result-explanation">
+
+                    <strong>
+                        💡 What happened to your income?
+                    </strong>
+
+                    <p>
+
+                        TaxWise started with your gross income,
+                        applied the deductions supported by this
+                        calculator, calculated your taxable income,
+                        applied the selected tax regime's slabs,
+                        considered the applicable rebate and then
+                        added Health & Education Cess.
+
+                    </p>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     LEARNING BUTTON
+                ================================================== -->
+
+                <div class="result-learning">
+
+                    <h3>
+                        Want to understand this better?
+                    </h3>
+
+                    <p>
+                        Visit our learning section to understand
+                        tax slabs, taxable income, rebates,
+                        deductions and cess.
+                    </p>
+
+                    <a href="/learn"
+                       class="btn">
+
+                        📚 Learn About Income Tax
+
+                    </a>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+        {% endif %}
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     TAX SLABS
+====================================================== -->
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <p class="section-label">
+                AY 2026–27
+            </p>
+
+            <h2>
+                New Tax Regime Slabs
+            </h2>
+
+            <p>
+                The following slab structure is used by
+                TaxWise for the new regime.
+            </p>
+
+        </div>
+
+
+        <div class="table-container">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            Taxable Income
+                        </th>
+
+                        <th>
+                            Tax Rate
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody>
+
+                    <tr>
+
+                        <td>
+                            Up to ₹4,00,000
+                        </td>
+
+                        <td>
+                            0%
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>
+                            ₹4,00,001 – ₹8,00,000
+                        </td>
+
+                        <td>
+                            5%
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>
+                            ₹8,00,001 – ₹12,00,000
+                        </td>
+
+                        <td>
+                            10%
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>
+                            ₹12,00,001 – ₹16,00,000
+                        </td>
+
+                        <td>
+                            15%
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>
+                            ₹16,00,001 – ₹20,00,000
+                        </td>
+
+                        <td>
+                            20%
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>
+                            ₹20,00,001 – ₹24,00,000
+                        </td>
+
+                        <td>
+                            25%
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>
+                            Above ₹24,00,000
+                        </td>
+
+                        <td>
+                            30%
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FAQ
+====================================================== -->
+
+<section id="faq"
+         class="section faq-section">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <p class="section-label">
+                FAQ
+            </p>
+
+            <h2>
+                Frequently Asked Questions
+            </h2>
+
+        </div>
+
+
+
+        <div class="faq-list">
+
+
+            <div class="faq-item">
+
+                <h3>
+                    Is TaxWise an official government website?
+                </h3>
+
+                <p>
+                    No. TaxWise is an independent educational
+                    and tax-estimation website. It is not the
+                    official Income Tax Department portal.
+                </p>
+
+            </div>
+
+
+
+            <div class="faq-item">
+
+                <h3>
+                    Which assessment year does TaxWise support?
+                </h3>
+
+                <p>
+                    This version is designed around
+                    Assessment Year 2026–27.
+                </p>
+
+            </div>
+
+
+
+            <div class="faq-item">
+
+                <h3>
+                    Why does TaxWise ask for my age?
+                </h3>
+
+                <p>
+                    Age is relevant to the old tax regime because
+                    the basic exemption limit differs for individuals
+                    below 60, senior citizens and super senior citizens.
+                </p>
+
+            </div>
+
+
+
+            <div class="faq-item">
+
+                <h3>
+                    Can I claim 80C and 80D in the new regime?
+                </h3>
+
+                <p>
+                    The deductions supported in this version are
+                    considered only when the Old Tax Regime is selected.
+                    Actual tax eligibility can depend on your personal
+                    circumstances and the applicable law.
+                </p>
+
+            </div>
+
+
+
+            <div class="faq-item">
+
+                <h3>
+                    Is the result my exact tax liability?
+                </h3>
+
+                <p>
+                    No. The result is an estimate based on the
+                    inputs and rules supported by this version.
+                    It does not cover every income type, exemption,
+                    deduction, special tax rate, surcharge,
+                    marginal relief or filing situation.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     DISCLAIMER
+====================================================== -->
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="info-box">
+
+            <strong>
+                ⚠️ Important
+            </strong>
+
+            <p>
+
+                TaxWise is an educational tax-estimation tool.
+                The calculation should not be treated as a
+                substitute for professional tax advice or
+                official income-tax filing.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FOOTER
+====================================================== -->
+
+<footer>
+
+    <div class="container">
+
+        <div class="footer-content">
+
+            <div>
+
+                <h3>
+                    💰 TaxWise
+                </h3>
+
+                <p>
+                    Learn • Understand • Calculate
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <p>
+                    Assessment Year 2026–27
+                </p>
+
+                <p>
+                    Educational tax estimation tool
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 TaxWise. All rights reserved.
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+====================================================== -->
+
+<script>
+
+function toggleOldDeductions() {
+
+    const regime =
+        document.getElementById("regime").value;
+
+    const oldDeductions =
+        document.getElementById("oldDeductions");
+
+    const newRegimeInfo =
+        document.getElementById("newRegimeInfo");
+
+
+    if (regime === "old") {
+
+        oldDeductions.style.display = "block";
+
+        newRegimeInfo.style.display = "none";
+
+    }
+
+    else {
+
+        oldDeductions.style.display = "none";
+
+        newRegimeInfo.style.display = "block";
+
+    }
+
+}
+
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+        toggleOldDeductions();
+
+    }
+);
+
+</script>
+
+
+</body>
+
+</html>
