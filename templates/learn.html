@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Learn Income Tax - TaxWise</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+
+<body>
+
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+    <div class="logo">
+        💰 TaxWise
+    </div>
+
+    <nav>
+
+        <a href="/">Home</a>
+
+        <a href="/learn">Learn Tax</a>
+
+    </nav>
+
+</header>
+
+
+<!-- ================= LEARNING PAGE ================= -->
+
+<main class="learn-page">
+
+
+    <!-- PAGE INTRO -->
+
+    <div class="section-title">
+
+        <span>LEARN TAX</span>
+
+        <h1>
+            📚 Learn About Income Tax
+        </h1>
+
+        <p>
+            Understand income tax in a simple and
+            easy way before using the calculator.
+        </p>
+
+    </div>
+
+
+    <!-- ================= WHAT YOU WILL LEARN ================= -->
+
+    <div class="learn-card-large">
+
+        <h2>
+            What You Will Learn
+        </h2>
+
+        <p>
+            Income tax can look complicated at first.
+            This guide explains the basic concepts
+            step-by-step so that you can understand
+            how tax calculations work.
+        </p>
+
+        <ul>
+
+            <li>What is income tax?</li>
+
+            <li>What is taxable income?</li>
+
+            <li>What are tax slabs?</li>
+
+            <li>What is a tax regime?</li>
+
+            <li>What is a rebate?</li>
+
+            <li>What is Health and Education Cess?</li>
+
+            <li>How is income tax calculated?</li>
+
+        </ul>
+
+    </div>
+
+
+    <!-- ================= 1 ================= -->
+
+    <div class="learn-card-large">
+
+        <div class="card-icon">
+            💰
+        </div>
+
+        <h2>
+            1. What is Income Tax?
+        </h2>
+
+        <p>
+            Income tax is a tax charged on taxable
+            income according to the applicable
+            tax laws.
+        </p>
+
+        <p>
+            Individuals may have income from sources
+            such as salary, business, profession,
+            house property, investments and other
+            sources.
+        </p>
+
+        <div class="info-box">
+
+            <strong>Simple idea:</strong>
+
+            Income earned → Applicable tax rules
+            → Tax calculated
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= 2 ================= -->
+
+    <div class="learn-card-large">
+
+        <div class="card-icon">
+            🧾
+        </div>
+
+        <h2>
+            2. What is Taxable Income?
+        </h2>
+
+        <p>
+            Taxable income is the income considered
+            for calculating income tax after applying
+            the applicable deductions, exemptions
+            and rules.
+        </p>
+
+        <h3>
+            Simple idea:
+        </h3>
+
+        <div class="info-box">
+
+            Gross Income − Applicable
+            deductions/exemptions
+            = Taxable Income
+
+        </div>
+
+        <p>
+            The exact calculation depends on the
+            applicable tax rules and the type of
+            income.
+        </p>
+
+    </div>
+
+
+    <!-- ================= 3 ================= -->
+
+    <div class="learn-card-large">
+
+        <div class="card-icon">
+            📊
+        </div>
+
+        <h2>
+            3. What are Tax Slabs?
+        </h2>
+
+        <p>
+            A tax slab is an income range to which
+            a particular tax rate applies.
+        </p>
+
+        <p>
+            Tax is calculated progressively.
+            This means that different portions of
+            income can be taxed at different rates.
+        </p>
+
+        <div class="info-box">
+
+            💡 A higher slab rate does not mean
+            that the entire income is automatically
+            taxed at that highest rate.
+
+        </div>
+
+
+        <h3>
+            New Tax Regime — AY 2026–27
+        </h3>
+
+
+        <div class="table-container">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            Taxable Income
+                        </th>
+
+                        <th>
+                            New Regime Rate
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody>
+
+                    <tr>
+
+                        <td>
+                            Up to ₹4,00,000
+                        </td>
+
+                        <td>
+                            0%
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>
+                            ₹4,00,001 – ₹8,00,000
+                        </td>
+
+                        <td>
+                            5%
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>
+                            ₹8,00,001 – ₹12,00,000
+                        </td>
+
+                        <td>
+                            10%
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>
+                            ₹12,00,001 – ₹16,00,000
+                        </td>
+
+                        <td>
+                            15%
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>
+                            ₹16,00,001 – ₹20,00,000
+                        </td>
+
+                        <td>
+                            20%
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>
+                            ₹20,00,001 – ₹24,00,000
+                        </td>
+
+                        <td>
+                            25%
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>
+                            Above ₹24,00,000
+                        </td>
+
+                        <td>
+                            30%
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= 4 ================= -->
+
+    <div class="learn-card-large">
+
+        <div class="card-icon">
+            🔄
+        </div>
+
+        <h2>
+            4. What is a Tax Regime?
+        </h2>
+
+        <p>
+            A tax regime refers to the set of tax
+            rates, deductions, exemptions and rules
+            used for calculating income tax.
+        </p>
+
+        <h3>
+            New Tax Regime
+        </h3>
+
+        <p>
+            The new regime has its own slab structure
+            and provides certain benefits according
+            to the applicable tax rules.
+        </p>
+
+        <h3>
+            Old Tax Regime
+        </h3>
+
+        <p>
+            The old regime has a different slab
+            structure and allows eligible deductions
+            and exemptions subject to the applicable
+            rules.
+        </p>
+
+    </div>
+
+
+    <!-- ================= 5 ================= -->
+
+    <div class="learn-card-large">
+
+        <div class="card-icon">
+            🧮
+        </div>
+
+        <h2>
+            5. How is Income Tax Calculated?
+        </h2>
+
+        <p>
+            A simplified tax calculation can be
+            understood through the following steps:
+        </p>
+
+        <ol>
+
+            <li>
+                Identify the taxable income.
+            </li>
+
+            <li>
+                Select the applicable tax regime.
+            </li>
+
+            <li>
+                Divide income into the applicable
+                tax slabs.
+            </li>
+
+            <li>
+                Calculate tax for each applicable
+                slab.
+            </li>
+
+            <li>
+                Apply an eligible rebate, if applicable.
+            </li>
+
+            <li>
+                Calculate applicable cess.
+            </li>
+
+            <li>
+                Obtain the estimated final tax.
+            </li>
+
+        </ol>
+
+
+        <div class="info-box">
+
+            <strong>
+                Basic calculation idea:
+            </strong>
+
+            <br><br>
+
+            Slab Tax − Eligible Rebate
+            = Tax After Rebate
+
+            <br><br>
+
+            Tax After Rebate + Applicable Cess
+            = Estimated Final Tax
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= 6 ================= -->
+
+    <div class="learn-card-large">
+
+        <div class="card-icon">
+            🎁
+        </div>
+
+        <h2>
+            6. What is a Rebate?
+        </h2>
+
+        <p>
+            A rebate can reduce the tax payable when
+            the taxpayer satisfies the conditions
+            prescribed under the applicable tax rules.
+        </p>
+
+        <p>
+            For the new regime implemented in this
+            educational application, an eligible
+            taxpayer within the applicable income
+            limit may receive a Section 87A rebate.
+        </p>
+
+        <div class="info-box">
+
+            💡 Rebate reduces the tax payable.
+            It is different from a deduction.
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= 7 ================= -->
+
+    <div class="learn-card-large">
+
+        <div class="card-icon">
+            ➕
+        </div>
+
+        <h2>
+            7. What is Health and Education Cess?
+        </h2>
+
+        <p>
+            Health and Education Cess is an additional
+            amount calculated on applicable income tax
+            according to the prescribed rate.
+        </p>
+
+        <div class="info-box">
+
+            <strong>
+                In this educational calculator:
+            </strong>
+
+            <br><br>
+
+            Cess = Tax After Rebate × 4%
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= 8 ================= -->
+
+    <div class="learn-card-large">
+
+        <div class="card-icon">
+            🔍
+        </div>
+
+        <h2>
+            8. Why Does the Calculator Show a Breakdown?
+        </h2>
+
+        <p>
+            TaxWise does not simply display a final
+            number. It shows how the estimated tax
+            was calculated.
+        </p>
+
+        <p>
+            The result page displays:
+        </p>
+
+        <ul>
+
+            <li>Taxable income</li>
+
+            <li>Tax before rebate</li>
+
+            <li>Eligible rebate</li>
+
+            <li>Tax after rebate</li>
+
+            <li>Health and Education Cess</li>
+
+            <li>Estimated final tax</li>
+
+        </ul>
+
+        <p>
+            This helps the user understand where the
+            final tax amount comes from.
+        </p>
+
+    </div>
+
+
+    <!-- ================= IMPORTANT NOTE ================= -->
+
+    <div class="learn-card-large">
+
+        <div class="card-icon">
+            ⚠️
+        </div>
+
+        <h2>
+            Important Note
+        </h2>
+
+        <p>
+            TaxWise is an educational project designed
+            to help users understand basic income-tax
+            concepts and calculations.
+        </p>
+
+        <p>
+            The calculator uses the rules implemented
+            in this application and should not be treated
+            as an official tax filing or professional
+            tax-advice system.
+        </p>
+
+    </div>
+
+
+    <!-- ================= CALCULATOR BUTTON ================= -->
+
+    <div style="text-align:center; margin-top:40px;">
+
+        <a href="/"
+           class="primary-btn">
+
+            🧮 Try the Tax Calculator →
+
+        </a>
+
+    </div>
+
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <h3>
+        💰 TaxWise
+    </h3>
+
+    <p>
+        Learn • Understand • Calculate
+    </p>
+
+    <p class="disclaimer">
+
+        Educational Income Tax Learning &
+        Calculation Project
+
+    </p>
+
+</footer>
+
+
+</body>
+
+</html>
